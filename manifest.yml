@@ -1,0 +1,13 @@
+---
+declared-services:
+  php-mysql-db:
+    label: mysql
+    plan: 100
+applications:
+- disk_quota: 256M
+  host: php-mysql
+  name: php-mysql
+  instances: 1
+  memory: 256M
+  services:
+    - php-mysql-db
