@@ -1,3 +1,4 @@
+<!--
 /**
 * Copyright 2015 IBM Corp. All Rights Reserved.
 *
@@ -13,6 +14,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+-->
 
 <?php
 if(!$_ENV["VCAP_SERVICES"]){ //local dev
