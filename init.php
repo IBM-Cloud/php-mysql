@@ -30,7 +30,7 @@ $sqlTable="DROP TABLE IF EXISTS MESSAGES_TABLE";
 if ($mysqli->query($sqlTable)) {
     echo "Table dropped successfully! <br>";
 } else {
-	echo "Cannot drop table. "  . mysqli_error();
+	//echo "Cannot drop table. "  . mysqli_error();
 }
 
 
@@ -47,7 +47,8 @@ CREATE TABLE MESSAGES_TABLE (
 if ($mysqli->query($sqlTable)) {
     echo "Table created successfully!<br>";
 } else {
-	echo "Cannot create table. "  . mysqli_error();
+	echo "ERROR: Cannot create table. "  . mysqli_error();
+	die();
 }
 
 
