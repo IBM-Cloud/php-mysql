@@ -19,7 +19,7 @@
  */
 body,html {
 	background-color: #3b4b54;
-	width: 1000px;
+	max-width: 1000px;
 	height: 100%;
 	margin: 0 auto;
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
@@ -72,7 +72,7 @@ header,footer {
 
 /* content width */
 .title,.tips,section,.records {
-	width: 600px;
+	max-width: 600px;
 }
 
 @media ( max-width : 600px) {
