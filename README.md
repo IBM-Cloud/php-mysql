@@ -2,8 +2,6 @@
 
 This simple PHP application demonstrates how to connect to a MySQL service on Bluemix. This application allows the user to create a new table, and enter records into the database using the UI.
 
-Note: The `mysql` service used by this sample is in the [Bluemix Labs Catalog](https://console.ng.bluemix.net/catalog/labs/). It can also be used with ClearDB.
-
 ## Running the app on Bluemix
 
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)
