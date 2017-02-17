@@ -14,35 +14,21 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
--->
+->
 
 <?php include 'db.php';?>
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") { //if new message is being added
+    $inputJSON = file_get_contents('php://input');
+    $input= json_decode( $inputJSON, TRUE ); //convert JSON into array
 
-$sqlTable="DROP TABLE IF EXISTS VISITORS_TABLE";
-if ($mysqli->query($sqlTable)) {
-    echo "Table dropped successfully! <br>";
-} else {
-	//echo "Cannot drop table. "  . mysqli_error();
+    $cleaned_message = preg_replace('/[^a-zA-Z0-9.\s]/', '', $input["name"]); //remove invalid chars from input.
+
+    $strsq0 = "INSERT INTO MESSAGES_TABLE ( NAME) VALUES ('" . $cleaned_message . "');"; //query to insert new message
+    if ($mysqli->query($strsq0)) {
+        echo "Hello " . $input["name"] . "! I've added you to the database.";
+    } else {
+        echo "Hello " . $input["name"] . "!";
+    }
 }
-
-
-echo "Executing CREATE TABLE Query...<br>";
-$sqlTable="
-CREATE TABLE VISITORS_TABLE (
- ID bigint(20) NOT NULL AUTO_INCREMENT,
- TIME TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
- NAME varchar(255) DEFAULT NULL,
- PRIMARY KEY (ID)
-) DEFAULT CHARSET=utf8
-";
-
-if ($mysqli->query($sqlTable)) {
-    echo "Table created successfully!<br>";
-} else {
-	echo "ERROR: Cannot create table. "  . mysqli_error();
-	die();
-}
-
-
 ?>
