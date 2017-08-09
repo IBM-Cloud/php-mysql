@@ -2,7 +2,7 @@
 declared-services:
   php-mysql-db:
     label: cleardb
-    plan: spark
+    plan: cb5
 applications:
 - disk_quota: 256M
   name: php-mysql
